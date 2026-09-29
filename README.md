@@ -1,4 +1,4 @@
-# qlabpucp-assignment1-group5
+# qlabpucp-group5
 # Assignment 2 - Scraping, APIs y Cruce por Ubigeo 
 
 ## Pregunta del trabajo
