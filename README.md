@@ -11,6 +11,8 @@ Cada temporada de lluvias, la Presidencia del Consejo de Ministros (PCM) publica
 
 1 de enero al 31 de mayo de 2022
 
+## Precisiones 
+
 - `assignment_1/` no se toca.
 - Todo el trabajo se hace en VS Code, con commits y pushes desde GitHub Desktop (o Git).
 
@@ -47,6 +49,7 @@ Cada temporada de lluvias, la Presidencia del Consejo de Ministros (PCM) publica
 - Los archivos CSV están guardados en `datos/`.
 - Otro integrante revisó el notebook antes de cerrar el Issue.
 
+---------------------------------------------------------------------------
 
 # Assignment 1 – Lists, Tuples, Dictionaries, and NumPy
 
