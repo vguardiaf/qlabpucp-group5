@@ -28,10 +28,10 @@
 
 1. Se solicitó el código para exportar la tabla correctamente en formato csv. Claude Code brindó el siguiente código: 
 
-df.to_csv(lluvias_por_departamento.csv", index=False, encoding="utf-8-sig")
+    df.to_csv(lluvias_por_departamento.csv", index=False, encoding="utf-8-sig")
 
-Sin embargo, cuando se exportó el documento en csv, se notaron dos cosas: 1. Los valores no estaban redondeados y los valores se mostraban como números sin decimal (ejemplo: 39e16 en vez de 39.2). 2. Al convertir el texto en columnas se iban los decimales de lat y long. 
+    Sin embargo, cuando se exportó el documento en csv, se notaron dos cosas: 1. Los valores no estaban redondeados y los valores se mostraban como números sin decimal (ejemplo: 39e16 en vez de 39.2). 2. Al convertir el texto en columnas se iban los decimales de lat y long. 
 
-Para resolver el problema del redondeo se verificó que por ejemplo Lima tenía un valor de 39.19999999999996 producto de la suma de sus valores diarios de lluvia. Se aplicó la función round() a un decimal. 
+    Para resolver el problema del redondeo se verificó que por ejemplo Lima tenía un valor de 39.19999999999996 producto de la suma de sus valores diarios de lluvia. Se aplicó la función round() a un decimal. 
 
-Para resolver el problema de los separadores se mejoró el código incorporando los criterios sep=";" y decimal=".".  
+    Para resolver el problema de los separadores se mejoró el código incorporando los criterios sep=";" y decimal=".".  
