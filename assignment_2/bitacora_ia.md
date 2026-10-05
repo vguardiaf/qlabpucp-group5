@@ -1,3 +1,29 @@
+# PARTE 1 - Bitácora de Uso de IA - scraping_emergencias.ipynb
+
+## Registro de interacciones y errores corregidos con apoyo de la IA
+
+Durante el desarrollo de la Parte 1 se utilizó la IA como herramienta de apoyo en momentos puntuales para revisar el código, identificar errores de ejecución y verificar que los procedimientos realizados cumplieran con las indicaciones del trabajo.
+
+1. Consulta sobre la organización del procedimiento de scraping de los decretos de emergencia publicados por la PCM entre enero y mayo de 2022. La IA brindó orientación para organizar los resultados mensuales y verificar la cantidad de registros obtenidos.
+
+2. Consulta sobre un error relacionado con el nombre de una variable. La IA propuso inicialmente utilizar `df_decretos_original`, pero esta variable no existía en el notebook. Se revisaron las variables disponibles para identificar el DataFrame que realmente correspondía utilizar.
+
+3. Consulta sobre la recuperación de los títulos completos de las normas. Se revisó el uso de `requests` y `BeautifulSoup`, así como la incorporación de una pausa de un segundo entre solicitudes.
+
+4. Consulta sobre la clasificación de las normas mediante palabras clave. Se revisó la creación de las variables `es_lluvia`, `tipo` y `motivo`, así como los registros que quedaron clasificados como `"otro"`.
+
+5. Consulta sobre la exportación de los resultados. Se revisó la estructura de los archivos `decretos_lluvias.csv` y `decretos_por_departamento.csv` para comprobar que contuvieran las columnas solicitadas en las instrucciones.
+
+## Momentos en que la IA dio algo incorrecto, incompleto o que no funcionó
+
+1. Se solicitó apoyo para revisar la clasificación de las normas obtenidas mediante el scraping, utilizando el título completo para identificar si estaban relacionadas con lluvias y determinar su tipo y motivo. La IA sugirió realizar la clasificación mediante palabras clave como "lluvia", "precipitaciones", "prórroga", "declara", "peligro inminente" e "impacto de daños".
+Al revisar los resultados obtenidos se observó que 22 registros presentaban al menos una clasificación como "otro". La explicación inicial de la IA resultó incompleta, ya que podía interpretarse que estos casos correspondían a registros que no habían podido clasificarse adecuadamente. Por ello, se revisaron manualmente algunos de los títulos y se comprobó que varios simplemente no contenían de forma literal las expresiones establecidas como criterio de clasificación.
+Para resolverlo, se mantuvieron los criterios definidos en las instrucciones del trabajo y se utilizó el título completo recuperado de cada norma en minúsculas. Además, se revisaron los casos clasificados como "otro" y se incorporó una explicación en el notebook indicando que esta categoría responde a la ausencia de las palabras establecidas en el título y no necesariamente a un error en el scraping.
+
+2. Se solicitó apoyo para identificar automáticamente los departamentos mencionados en los títulos de las normas relacionadas con lluvias. La IA sugirió inicialmente buscar el nombre de cada departamento directamente dentro del texto mediante coincidencias de cadenas.
+Al revisar este procedimiento se identificó que una búsqueda simple podía producir coincidencias parciales incorrectas. Por ejemplo, buscar "Ica" únicamente con una condición de pertenencia podía identificar esa secuencia dentro de nombres más largos como "Huancavelica". Asimismo, si un departamento aparecía más de una vez dentro del título, existía el riesgo de contabilizarlo más de una vez.
+Para resolverlo se mejoró el procedimiento utilizando expresiones regulares y límites de palabra con re.search(r"\b" + re.escape(departamento) + r"\b", titulo), trabajando sobre el título original para respetar los nombres de los departamentos. Finalmente, al aplicar el procedimiento al Decreto Supremo N.° 032-2022-PCM se identificaron correctamente los departamentos de Amazonas, Ayacucho y Piura, sin generar coincidencias parciales ni duplicados.
+
 # PARTE 2 - Bitácora de Uso de IA - api_lluvias.ipynb
 
 ## Registro de interacciones y errores humanos corregidos por la IA. 
