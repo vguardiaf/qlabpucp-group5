@@ -8,23 +8,6 @@
 
 Se toma la tabla final del Assignment 2 (`tabla-final.csv`: lluvias y declaratorias de emergencia por departamento, temporada del 1 de enero al 31 de mayo de 2022) y se convierte en gráficos interactivos, mapas del Perú y un dashboard público con filtros.
 
-## Estructura de `assignment_3/`
-
-```
-assignment_3/
-├── visualizacion.ipynb   (Parte 1: gráficos con Plotly Express)
-├── mapas.ipynb           (Parte 2: coropletas con Geopandas y Folium)
-├── app.py                (Parte 3: dashboard en Streamlit)
-├── requirements.txt
-├── README.md
-└── datos/
-    └── dataset.csv
-```
-
-## Dashboard público
-
-https://____.streamlit.app
-
 ## Precisiones
 
 - `assignment_1/` y `assignment_2/` no se tocan.
