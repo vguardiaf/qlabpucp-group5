@@ -1,4 +1,53 @@
 # qlabpucp-group5
+
+# Assignment 3 - Visualización, mapas y dashboard
+
+## Pregunta del trabajo
+
+¿Pueden convertir datos crudos en algo que cualquiera entienda en 2 minutos?
+
+Se toma la tabla final del Assignment 2 (`tabla-final.csv`: lluvias y declaratorias de emergencia por departamento, temporada del 1 de enero al 31 de mayo de 2022) y se convierte en gráficos interactivos, mapas del Perú y un dashboard público con filtros.
+
+## Estructura de `assignment_3/`
+
+```
+assignment_3/
+├── visualizacion.ipynb   (Parte 1: gráficos con Plotly Express)
+├── mapas.ipynb           (Parte 2: coropletas con Geopandas y Folium)
+├── app.py                (Parte 3: dashboard en Streamlit)
+├── requirements.txt
+├── README.md
+└── datos/
+    └── dataset.csv
+```
+
+## Dashboard público
+
+https://____.streamlit.app
+
+## Precisiones
+
+- `assignment_1/` y `assignment_2/` no se tocan.
+- Los ubigeos se leen siempre como **texto** (`dtype=str`) para conservar el cero a la izquierda.
+- Los mapas de Folium no se guardan con salidas en el notebook (pesan varios MB).
+- Los Issues se usan solo para coordinar; el código va en los notebooks y en `app.py`.
+
+## Uso de IA
+
+- Se usó Claude como apoyo, sin aceptar nada sin revisar.
+- Se verificó que los valores más altos y más bajos de la tabla coincidan con los gráficos.
+- Se verificó el cruce por ubigeo y se reportó lo que no cruzó.
+- Se comprobó que el dashboard abra en ventana de incógnito.
+
+## Revisión antes de entregar
+
+- Los 2 notebooks corren de principio a fin y están ejecutados.
+- `requirements.txt` está completo y el dashboard abre en incógnito.
+- Los 3 Issues están cerrados.
+- Todos los integrantes tienen commits.
+
+---------------------------------------------------------------------------
+
 # Assignment 2 - Scraping, APIs y Cruce por Ubigeo 
 
 ## Pregunta del trabajo
